@@ -80,7 +80,15 @@ export const EditModal = ({ commentData, type, postData }: EditModalProps) => {
   return (
     <Dialog open={open}>
       <DialogTrigger asChild onClick={() => setOpen(true)}>
-        <Pencil size={16} className="cursor-pointer" />
+        <Pencil
+          size={16}
+          className="cursor-pointer"
+          data-test={
+            type === EditModalEnum.COMMENT
+              ? "comment-edit-icon"
+              : "post-edit-icon"
+          }
+        />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -89,12 +97,13 @@ export const EditModal = ({ commentData, type, postData }: EditModalProps) => {
             Edit your message.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} data-test="edit-form">
           <div className="py-4">
             <Input
               id="body"
               defaultValue={inputDefaultValue}
               {...register("body")}
+              data-test="edit-input"
             />
           </div>
           <DialogFooter>

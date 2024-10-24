@@ -77,7 +77,12 @@ export const Post = ({ post }: { post: PostsResponseApiProps }) => {
         {authUserData.id === post.userId && (
           <div className="flex flex-col gap-y-2 justify-center">
             <EditModal postData={post} type={EditModalEnum.POST} />
-            <Trash size={16} onClick={deletePost} className="cursor-pointer" />
+            <Trash
+              size={16}
+              onClick={deletePost}
+              className="cursor-pointer"
+              data-test="post-trash-icon"
+            />
           </div>
         )}
       </div>
@@ -106,6 +111,7 @@ export const Post = ({ post }: { post: PostsResponseApiProps }) => {
                   size={16}
                   className="cursor-pointer"
                   onClick={() => deleteComment({ id: comment.id })}
+                  data-test="comment-trash-icon"
                 />
               )}
             </div>

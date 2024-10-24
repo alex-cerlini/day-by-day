@@ -42,15 +42,26 @@ export default function Home() {
     name: string;
     body: string;
   }) => {
-    queryClient.setQueryData(["posts"], (prev: PostsResponseApiProps[]) => [
-      ...prev,
-      {
-        userId,
-        id: Math.random() * 1_000_000,
-        title: name,
-        body,
-      },
-    ]);
+    queryClient.setQueryData(["posts"], (prev: PostsResponseApiProps[]) => {
+      if (!prev) {
+        return {
+          userId,
+          id: Math.random() * 1_000_000,
+          title: name,
+          body,
+        };
+      }
+
+      return [
+        ...prev,
+        {
+          userId,
+          id: Math.random() * 1_000_000,
+          title: name,
+          body,
+        },
+      ];
+    });
   };
 
   return (
@@ -63,10 +74,13 @@ export default function Home() {
             placeholder={tHome("whatsHappening")}
             className="w-full outline-none whitespace-pre-wrap break-words h-full"
             {...register("body")}
+            id="create-post"
           />
         </div>
         <div className="w-full flex justify-end">
-          <Button type="submit">{tButton("post")}</Button>
+          <Button type="submit" id="create-post-button">
+            {tButton("post")}
+          </Button>
         </div>
       </form>
       {postsIsFetching ? (
