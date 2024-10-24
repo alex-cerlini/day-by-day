@@ -126,8 +126,9 @@ export const Post = ({ post }: { post: PostsResponseApiProps }) => {
             placeholder={tHome("newComment")}
             className="w-full outline-none whitespace-pre-wrap break-words h-full"
             {...register("body")}
+            data-test="new-comment-input"
           />
-          <Button>{tButton("reply")}</Button>
+          <Button data-test="new-comment-button">{tButton("reply")}</Button>
         </div>
       </form>
     </div>
