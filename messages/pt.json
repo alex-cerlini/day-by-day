@@ -1,0 +1,41 @@
+{
+  "Home": {
+    "whatsHappening": "O que está acontecendo?",
+    "newComment": "Postar sua resposta"
+  },
+  "Button": {
+    "post": "Postar",
+    "reply": "Responder",
+    "save": "Salvar"
+  },
+  "NotFound": {
+    "profile": "Essa conta não existe."
+  },
+  "Account": {
+    "name": "Nome",
+    "username": "Usuário",
+    "email": "Email",
+    "address": {
+      "street": "Rua",
+      "suite": "Apartamento",
+      "city": "Cidade",
+      "zipcode": "CEP",
+      "geo": {
+        "lat": "Latitude",
+        "lng": "Longitude"
+      }
+    },
+    "phone": "Telefone",
+    "website": "Site",
+    "company": {
+      "name": "Nome da empresa",
+      "catchPhrase": "Slogan",
+      "bs": "BS"
+    },
+    "update": "Conta atualizada com sucesso."
+  },
+  "Nav": {
+    "home": "Página Inicial",
+    "account": "Meu perfil"
+  }
+}
