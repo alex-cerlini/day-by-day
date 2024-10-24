@@ -38,5 +38,9 @@
   "Nav": {
     "home": "Home",
     "account": "My profile"
+  },
+  "EditModal": {
+    "edit": "Edit",
+    "description": "Edit your message."
   }
 }

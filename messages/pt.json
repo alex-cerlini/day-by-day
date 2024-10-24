@@ -38,5 +38,9 @@
   "Nav": {
     "home": "Página Inicial",
     "account": "Meu perfil"
+  },
+  "EditModal": {
+    "edit": "Editar",
+    "description": "Edite sua mensagem."
   }
 }

@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { CommentsResponseApiProps } from "@/hooks/useComments/types";
 import { PostsResponseApiProps } from "@/hooks/usePosts/types";
 import { Pencil } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -31,6 +32,9 @@ type EditModalProps = {
 
 export const EditModal = ({ commentData, type, postData }: EditModalProps) => {
   const [open, setOpen] = useState(false);
+
+  const tEditModal = useTranslations("EditModal");
+  const tButton = useTranslations("Button");
 
   const updateComment = (body: string) => {
     queryClient.setQueryData(
@@ -92,9 +96,9 @@ export const EditModal = ({ commentData, type, postData }: EditModalProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit</DialogTitle>
+          <DialogTitle>{tEditModal("edit")}</DialogTitle>
           <DialogDescription className="sr-only">
-            Edit your message.
+            {tEditModal("description")}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} data-test="edit-form">
@@ -107,7 +111,7 @@ export const EditModal = ({ commentData, type, postData }: EditModalProps) => {
             />
           </div>
           <DialogFooter>
-            <Button type="submit">Save</Button>
+            <Button type="submit">{tButton("save")}</Button>
           </DialogFooter>
         </form>
       </DialogContent>
