@@ -9,7 +9,8 @@
     "save": "Submit"
   },
   "NotFound": {
-    "profile": "This account doesn't exist"
+    "profile": "This account doesn't exist",
+    "404": "Info not found"
   },
   "Account": {
     "name": "Name",

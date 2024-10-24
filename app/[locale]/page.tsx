@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-import { User } from "lucide-react";
+import { InfoIcon, User } from "lucide-react";
 import { usePosts } from "@/hooks/usePosts";
 import { Post } from "@/components/Post";
 import { Button } from "@/components/Button";
@@ -16,6 +16,7 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 export default function Home() {
   const tHome = useTranslations("Home");
   const tButton = useTranslations("Button");
+  const tNotFound = useTranslations("NotFound");
 
   const { data: postsData, isFetching: postsIsFetching } = usePosts();
 
@@ -87,8 +88,13 @@ export default function Home() {
         <div className="w-full flex justify-center items-center my-20">
           <LoadingSpinner className="w-16 h-16" />
         </div>
-      ) : (
+      ) : Array.isArray(postsData) ? (
         postsData?.map((post) => <Post post={post} key={post.id} />)
+      ) : (
+        <div className="w-full flex justify-center items-center my-20 gap-x-4">
+          <InfoIcon />
+          <h1>{tNotFound("404")}</h1>
+        </div>
       )}
     </div>
   );

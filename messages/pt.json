@@ -9,7 +9,8 @@
     "save": "Salvar"
   },
   "NotFound": {
-    "profile": "Essa conta não existe."
+    "profile": "Essa conta não existe.",
+    "404": "Nenhuma informação foi encontrada."
   },
   "Account": {
     "name": "Nome",
