@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Day-By-Day
 
-## Getting Started
+## Project Description
 
-First, run the development server:
+<p align="center">An app to consume a fake api simulating social media</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Table Content
+
+ <p align="center">
+ <a href="#features">Features</a> •
+ <a href="#technologies">Technologies</a> •
+ <a href="#demo">Demo</a> •
+ <a href="#prerequisites">Prerequisites</a> •
+ <a href="#initialization">Project Initialization</a> •
+ <a href="#autor">Autor</a> 
+</p>
+
+### Features
+
+- [x] Listing posts on home page
+- [x] See specific user posts
+- [x] Languages with i18n
+- [x] Page to change auth user info
+- [x] Loading handling with animated spinner
+- [x] Error handling with not found messages
+- [x] E2E tests with Cypress
+
+### Technologies
+
+The following tools were used in building the project:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Shadcnui](https://ui.shadcn.com/)
+- [Lucide](https://lucide.dev/)
+- [Tanstack Query (React Query)](https://tanstack.com/query/latest)
+- [Next.js](https://nextjs.org/)
+- [next-intl](https://next-intl-docs.vercel.app/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Cypress](https://www.cypress.io/)
+
+### Demo
+
+This application was hosted by [Vercel](https://vercel.com/) and can be found [here](https://day-by-day-tau.vercel.app/).
+
+### Prerequisites:
+
+- Node.js 18.17 or later: Ensure you have this version installed on your system. You can download it from the official Node.js website: https://nodejs.org/en
+- A code editor: Choose a suitable editor like Visual Studio Code, Sublime Text, or Atom.
+
+### Initialization:
+
+1. Open your terminal and navigate to the target root directory.
+
+2. Clone the project with git clone:
+
+```
+git clone git@github.com:alex-cerlini/day-by-day.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run the following command to install the dependencies:
+   `npm i`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Create .env file on root of the project with the following keys and fullfil with the api info:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+API_BASE_URL=
+```
 
-## Learn More
+5. You're ready to go. Just run the following command: `npm run dev`
 
-To learn more about Next.js, take a look at the following resources:
+### End2End
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Prerequisite
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To run the end 2 end tests, first do the <a href="#initialization">Project Initialization</a> step
 
-## Deploy on Vercel
+#### Initialization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Run in separated terminal the following command: `npm run cy:open`
+2. In the new window, click on `E2E Testing`
+3. Choose your fav browser then click on `Start E2E Testing in Chrome`
+4. In the new window, choose the test and enjoy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+<p align="center" id="autor">
+  Made with <span style="color: red;">♥</span> by <a href="https://github.com/alex-cerlini">Alexander Andrade Cerlini</a>
+</p>
